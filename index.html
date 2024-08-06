@@ -10,7 +10,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: red;
+            background-color:white;
         }
         .container {
             max-width: 800px;
@@ -22,15 +22,40 @@
         }
         h1 {
             text-align: center;
-            color: blue;
+            color: red;
         }
         table {
             width: 100%;
             border-collapse: collapse;
         }
-
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid white;
+        }
+        th {
+            background-color: white;
+        }
+        .highlight {
+            background-color: #e0f7fa;
+        }
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .text-input {
+            width: 200px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .hidden-text {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: #00796b;
+            font-weight: bold;
+        }
     </style>
-
 </head>
 <body>
     <div class="Container">
@@ -74,11 +99,19 @@
                 </tr>
             </tbody>
         </table>
+        <div class="button-container">
+            <input type="text" class="text-input" placeholder="Enter new text here">
+            <button onclick="changeText()">Change Text</button>
         </div>
-
-
-
+        <div id="hidden-text" class="hidden-text">ZZZZZ</div>
+        </div>
+        <script>
+            function changeText() {
+                var input = document.querySelector('.text-input').value;
+                var hiddenText = document.getElementById('hidden-text');
+                hiddenText.textContent = input;
+                hiddenText.style.display = 'block';
+            }
+        </script>
 </body>
-
-
 </html>
